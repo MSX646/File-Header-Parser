@@ -171,7 +171,7 @@ void dump_segs(FILE *obj)
 	bool is_64 = is_magic64(magic);
 	bool is_swap = byte_order(magic);
 	bool fat = is_fat(magic);
-	printf("Magic: %" PRIu32 "\n", magic);
+	printf("Magic: %x\n", magic);
 	if (fat)
 		dump_fat_header(obj, is_swap);
 	else
@@ -182,7 +182,7 @@ int main(int ac, char **av)
 {
 	if (ac != 2 || !strcmp(av[1], "-h") || !strcmp(av[1], "--help"))
 	{
-		printf("Usage: ./dumper <mach-o file>\n");
+		printf("Usage: %s <mach-o file>\n", av[0]);
 		return 1;
 	}
 	const char *file = av[1];

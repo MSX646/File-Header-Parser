@@ -12,7 +12,7 @@ endif
 all: $(NAME)
 
 $(NAME):
-	$(CC) $(SRC) -o $(NAME)
+	$(CC) -g3 $(SRC) -o $(NAME)
 
 re: clean all
 
